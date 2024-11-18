@@ -57,6 +57,13 @@
             marker.setLatLng(e.latlng);
         });
 
+        document.getElementById('btnBuscar').addEventListener('click', ()=>{
+            let lugar = document.getElementById('lugar').value;
+            fetch(`https://nominatim.openstreetmap.org/search?q=${lugar}&format=json`)
+            .then(response => response.json())
+            .then(data => console.log(data))
+        });
+
     </script>
 
 </body>
