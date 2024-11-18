@@ -16,8 +16,13 @@
     </style>
 </head>
 <body>
+    <div>
+        <input type="text" placeholder="Informe o lugar" id="lugar">
+        <button type="button" id="btnBuscar">
+            Buscar
+        </button>
+    </div>
     <div id="map"></div>
-
     <script>
         let center = [-6.888744873962035, -38.56063094900568];
         var map = L.map('map').setView(center, 14);
