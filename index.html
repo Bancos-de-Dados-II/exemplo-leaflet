@@ -36,6 +36,17 @@
             title: 'Meu evento',
             icon: myIcon
         }).addTo(map);
+
+        map.locate();
+
+        map.on('locationfound', e=>{
+            map.panTo(e.latlng);
+            marker.setLatLng(e.latlng);
+        });
+
+        map.on('locationerror', e=>{
+            console.log('Localização não encontrada');
+        });
     
         map.on('click', e =>{
             marker.setLatLng(e.latlng);
